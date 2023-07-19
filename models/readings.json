@@ -1,1 +1,12 @@
-{"file":"./models/readings.json","readings":[]}
+{"file":"./models/readings.json",
+"readings": [
+    {
+        "id": "02",
+          "code": 800,
+          "temperature": 0.5,
+          "windSpeed": 3.5,
+          "pressure": 1002,
+          "stationid": "01"
+    }
+]
+}

@@ -4,7 +4,7 @@
     {
       "_id": "01",
       "name": "Tramore",
-      "reading": [
+      "readings": [
         {
           "id": "02",
           "code": 800,
@@ -31,7 +31,7 @@
     {
       "_id": "05",
       "name": "Dunmore",
-      "reading": [
+      "readings": [
         {
           "id": "06",
           "code": 700,
@@ -47,6 +47,10 @@
           "pressure": 1000
         }
       ]
+    },
+    {
+      "name": "Test",
+      "_id": "7a45b6bc-bdfd-4bc4-aed6-0656f70bfc11"
     }
   ]
 }

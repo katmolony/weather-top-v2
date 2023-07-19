@@ -1,4 +1,4 @@
-# Weather Top Version 2
+# Weather Top Application Version 2
 
 A starter project for Weather Top V.2
 

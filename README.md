@@ -3,7 +3,7 @@
 A starter project for Weather Top V.2
 
 This is the starter project for the revise version of Weather Top Application.
-This version is coded using JavaScript and Handlebars
+This version is coded using JavaScript and Handlebars.
 
 This is an Express.js project, designed to work well with the Glitch development environment. It includes basic express setup, handlebars templating, routing, + lowdb database.
 

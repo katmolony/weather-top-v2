@@ -2,7 +2,7 @@
   "file": "./models/stations.json",
   "stationCollection": [
     {
-      "id": "01",
+      "_id": "01",
       "name": "Tramore",
       "reading": [
         {
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "id": "05",
+      "_id": "05",
       "name": "Dunmore",
       "reading": [
         {

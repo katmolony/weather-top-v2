@@ -4,7 +4,7 @@ import { readingStore } from "../models/reading-store.js";
 export const stationController = {
   async index(request, response) {
     const station = await stationStore.getStationById(request.params.id);
-
+   
     let latestReading = null;
     if (station.readings.length > 0) {
       for (let i = station.readings.length; i <= station.readings.length; i++) { 

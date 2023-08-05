@@ -12,7 +12,7 @@ export const stationController = {
           latestReading = station.readings[i-1];
         }
       }
-    }
+    }  
     console.log(latestReading);
 
     const viewData = {
@@ -40,7 +40,7 @@ export const stationController = {
     const stationId = request.params.stationid;
     const readingId = request.params.readingid;
     console.log(`Deleting Reading ${readingId} from Station ${stationId}`);
-    await readingStore.deleteReading(request.params.readingId);
+    await readingStore.deleteReading(readingId);
     response.redirect("/station/" + stationId);
   },
 };

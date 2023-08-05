@@ -3,50 +3,20 @@
   "stationCollection": [
     {
       "_id": "01",
-      "name": "Tramore",
-      "readings": [
-        {
-          "id": "02",
-          "code": 800,
-          "temperature": 0.5,
-          "windSpeed": 3.5,
-          "pressure": 1002
-        },
-        {
-          "id": "03",
-          "code": 600,
-          "temperature": 6,
-          "windSpeed": 2,
-          "pressure": 1004
-        },
-        {
-          "id": "04",
-          "code": 700,
-          "temperature": 8,
-          "windSpeed": 1,
-          "pressure": 1005
-        }
-      ]
+      "name": "Tramore"
     },
     {
       "_id": "05",
-      "name": "Dunmore",
-      "readings": [
-        {
-          "id": "06",
-          "code": 700,
-          "temperature": 8,
-          "windSpeed": 1,
-          "pressure": 999
-        },
-        {
-          "id": "07",
-          "code": 200,
-          "temperature": 0.5,
-          "windSpeed": 3.5,
-          "pressure": 1000
-        }
-      ]
+      "name": "Dunmore"
+    },
+    {
+      "name": "Tramore",
+      "_id": "961fdacc-2f2c-4623-849b-d021a0be0883"
+    },
+    {
+      "name": "Homer's Station",
+      "userid": "7189b874-6a50-476b-86df-27fd5e17ba06",
+      "_id": "72766cbe-90eb-41b3-a413-24ad85c0e02f"
     }
   ]
 }

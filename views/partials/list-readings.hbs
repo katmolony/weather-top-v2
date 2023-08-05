@@ -5,7 +5,8 @@
       <th>Temperature</th>
       <th>Wind Speed</th>
       <th>Pressure</th>
-      <th></th>
+      <th>Delete</th>
+      <th>Edit</th>
     </tr>
   </thead>
   <tbody>
@@ -27,7 +28,12 @@
         <a href="/station/{{../station._id}}/deletereading/{{_id}}" class="button">
           {{>icons/delete}}
         </a>
-      </td>    
+      </td>
+      <td>
+        <a href="/station/{{../station._id}}/editreading/{{_id}}" class="button">
+        {{>icons/edit}}
+        </a>
+      </td>  
     </tr>
     {{/each}}
   </tbody>

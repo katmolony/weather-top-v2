@@ -3,6 +3,7 @@ import { accountsController } from "./controllers/accounts-controller.js";
 import { dashboardController } from "./controllers/dashboard-controller.js";
 import { aboutController } from "./controllers/about-controller.js";
 import { stationController } from "./controllers/station-controller.js";
+import { readingController } from "./controllers/reading-controller.js";
 
 export const router = express.Router();
 
@@ -22,4 +23,5 @@ router.get("/dashboard/deletestation/:id", dashboardController.deleteStation);
 router.get("/station/:id", stationController.index);
 router.post("/station/:id/addReading", stationController.addReading);
 router.get("/station/:stationid/deletereading/:readingid", stationController.deleteReading);
-
+router.get("/station/:stationid/editreading/:readingid", readingController.index);
+router.post("/station/:stationid/updatereading/:readingid", readingController.update);

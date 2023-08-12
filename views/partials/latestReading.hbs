@@ -3,7 +3,7 @@
     <div class="columns">
 
         <div class="column is-one-fifth">
-            <box class="box has-background-black">
+            <box class="box">
                 <label class="label">Station</label>
                 <span class="icon is-large">
               <i class="fa-solid fas fa-2x fa-location-crosshairs"></i>
@@ -13,7 +13,7 @@
         </div>
 
         <div class="column is-one-fifth">
-            <box class="box has-background-black">
+            <box class="box">
                 <label class="label">Weather</label>
                 <span class="icon is-large">
               <i class="fa-solid fas fa-2x fa-cloud-sun"></i>
@@ -24,27 +24,29 @@
 
         <div class="column is-one-fifth">
 
-            <box class="box has-background-black">
+            <box class="box">
                 <label class="label">Temperature</label>
                 <span class="icon is-large">
               <i class="fa-solid fas fa-2x fa-temperature-three-quarters"></i>
           </span>
                 <p>{{latestReading.temperature}} °C</p>
+                <p>{{fahrenheit}}°F</p>
             </box>
         </div>
 
         <div class="column is-one-fifth">
-            <box class="box has-background-black">
+            <box class="box">
                 <label class="label">Wind</label>
                 <span class="icon is-large">
               <i class="fa-solid fas fa-2x fa-wind"></i>
           </span>
                 <p>{{latestReading.windSpeed}}</p>
+                <p>{{beafourt}} Bft</p>
             </box>
         </div>
 
         <div class="column is-one-fifth">
-            <box class="box has-background-black">
+            <box class="box">
                 <label class="label">Pressure</label>
                 <span class="icon is-large">
               <i class="fa-solid fas fa-2x fa-water"></i>

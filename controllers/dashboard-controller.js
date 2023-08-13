@@ -16,6 +16,8 @@ export const dashboardController = {
     const loggedInUser = await accountsController.getLoggedInUser(request);
     const newStation = {
       name: request.body.name,
+      lat: request.body.lat,
+      lng: request.body.lng,
       userid: loggedInUser._id,
     };
     console.log(`adding station ${newStation.name}`);

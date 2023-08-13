@@ -1,11 +1,16 @@
 export const conversions = {
   tempConversion(temp) {
     let fahrenheit = 0;
-    fahrenheit = (temp * 1.8) + 32;
-    return fahrenheit;
+    if (temp  != null) {
+      fahrenheit = (temp * 1.8) + 32;
+      return fahrenheit;
+    }
+    else return null;
   },
+
   beafourt(windSpeed) {
-        if (windSpeed == 0) {
+    if (windSpeed  != null) {
+      if (windSpeed == 0) {
           return 0;
         } else if (windSpeed >= 1 && windSpeed <= 6) {
           return 1;
@@ -33,9 +38,12 @@ export const conversions = {
           return 12;
         }
         return -1;
-      },
-      
-      degreesToCompass(deg) {
+      }
+      else return null;
+    },
+    
+    degreesToCompass(deg) {
+      if (deg  != null) {
         if (deg > 11.25 && deg <= 33.75) {
           return "North North East";
         } else if (deg > 33.75 && deg <= 56.25) {
@@ -70,4 +78,6 @@ export const conversions = {
           return "North";
         }
       }
+      else return null;
+    }
 }

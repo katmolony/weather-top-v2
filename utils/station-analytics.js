@@ -47,9 +47,11 @@ export const stationAnalytics = {
     return latestWindDirection;
   },
 
-  getWindChill(temp, windspeed) 
-  {
-    const windChill = 13.12 + 0.6215 * temp -  11.37 * (Math.pow(windspeed, 0.16)) + 0.3965 * temp * (Math.pow(windspeed, 0.16));
-    return windChill.toFixed(2);
-  }
+  getWindChill(temp, windspeed) {
+    if (temp  != null) {
+      const windChill = 13.12 + 0.6215 * temp -  11.37 * (Math.pow(windspeed, 0.16)) + 0.3965 * temp * (Math.pow(windspeed, 0.16));
+      return windChill.toFixed(2);
+    }
+  else return null;
+},
 }

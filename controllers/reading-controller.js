@@ -22,6 +22,7 @@ export const readingController = {
             code: Number(request.body.code),
             temperature: Number(request.body.temperature),
             windSpeed: Number(request.body.windSpeed),
+            windDirection: Number(request.body.windDirection),
             pressure: Number(request.body.pressure),
         };
         console.log(`Updating Reading ${readingId} from Station ${stationId}`);

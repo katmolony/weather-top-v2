@@ -10,6 +10,7 @@ export const stationController = {
     const latestReading = stationAnalytics.getLatestReading(station);
     const latestTemp = stationAnalytics.getLatestTemp(station);
     const latestWindSpeed = stationAnalytics.getLatestWindSpeed(station);
+    const latestWindDirection = stationAnalytics.getLatestWindDirection(station);
     // const minTemp = await stationAnalytics.minTemp(station);
     // const maxTemp = await stationAnalytics.maxTemp(station);
     const viewData = {
@@ -18,6 +19,8 @@ export const stationController = {
       latestReading: latestReading,
       fahrenheit: conversions.tempConversion(latestTemp),
       beafourt: conversions.beafourt(latestWindSpeed),
+      windChill: stationAnalytics.getWindChill(latestTemp, latestWindSpeed),
+      windCompass: conversions.degreesToCompass(latestWindDirection),
     };
     response.render("station-view", viewData);
   },
@@ -28,6 +31,7 @@ export const stationController = {
       code: Number(request.body.code),
       temperature: Number(request.body.temperature),
       windSpeed: Number(request.body.windSpeed),
+      windDirection: Number(request.body.windDirection),
       pressure: Number(request.body.pressure),
       // fahrenheit: conversions.tempConversion(request.body.temperature),
     };

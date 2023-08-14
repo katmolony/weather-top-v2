@@ -17,7 +17,7 @@ The Baseline Package which included:
 The Release 1 package included:
 
 - Reading: Wind Direction
-- Station: Wind compase, wind chill
+- Station: Wind compass, wind chill
 - Member: None
 - Features: The ability to add a new station, and a new reading for a station
 This Release 2 package included:

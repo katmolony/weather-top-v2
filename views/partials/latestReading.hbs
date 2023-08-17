@@ -1,4 +1,3 @@
-
 <div class="container">
     <div class="columns">
 
@@ -14,10 +13,7 @@
 
         <div class="column is-one-fifth">
             <box class="box">
-                <span class="icon">    
-                    <i class="right floated huge icon">
-                    {{>icons/weather}}</i>
-                    </span>
+                <i class="icon">{{>icons/weather}}</i>
                 <label class="label">Weather</label>
                 <p>{{latestReading.code}}</p>
             </box>
@@ -25,12 +21,8 @@
 
         <div class="column is-one-fifth">
             <box class="box">
-                <span class="icon">
-                    <i class="right floated huge icon">
-                        {{>icons/temp}}
-                        </i>
-                        </span>
-                        <label class="label">Temperature</label>
+                <i class="icon">{{>icons/temp}}</i>
+                <label class="label">Temperature</label>
                 <p>{{latestReading.temperature}} °C</p>
                 <p>{{fahrenheit}} °F</p>
                 <p>Max: {{maxTemp}}</p>
@@ -40,11 +32,7 @@
 
         <div class="column is-one-fifth">
             <box class="box">
-                <span class="icon">    
-                    <i></i>
-                        {{>icons/wind}}
-                        </i>
-                        </span>
+                <i class="icon">{{>icons/wind}}</i>
                 <label class="label">Wind</label>
                 <p>{{beafourt}} Bft</p>
                 <p>{{windCompass}}</p>
@@ -56,12 +44,12 @@
 
         <div class="column is-one-fifth">
             <box class="box">
-                <i class="right floated huge icon">{{>icons/pressure}}</i>
+                <i class="icon">{{>icons/pressure}}</i>
                 <label class="label">Pressure</label>
                 <p>{{latestReading.pressure}} hpa</p>
                 <p>Max: {{maxPressure}}</p>
                 <p>Min: {{minPressure}}</p>
-                </box>
+            </box>
         </div>
 
     </div>

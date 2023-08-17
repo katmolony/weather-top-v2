@@ -6,11 +6,13 @@ export const readingController = {
     async index(request, response) {  
         const stationId = request.params.stationid;
         const readingId = request.params.readingid;
+        const date = new Date();
         console.log(`Editing Reading ${readingId} from Station ${stationId}`);
         const viewData = {
             title: "Edit Reading",
             station: await stationStore.getStationById(stationId),
             reading: await readingStore.getReadingById(readingId),
+            date: date.toISOString(),
         };
         response.render("reading-view", viewData);
     },

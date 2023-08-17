@@ -5,18 +5,21 @@
       "_id": "01",
       "name": "Tramore",
       "lat": 52.16,
-      "lng": -7.152
+      "lng": -7.152,
+      "userid": "7189b874-6a50-476b-86df-27fd5e17ba06"
     },
     {
       "_id": "05",
       "name": "Dunmore",
       "lat": 52.16,
-      "lng": -6.994
+      "lng": -6.994,
+      "userid": "7189b874-6a50-476b-86df-27fd5e17ba06"
     },
     {
       "name": "Tramore",
       "lat": 3.4,
       "lng": -4.4,
+      "userid": "7189b874-6a50-476b-86df-27fd5e17ba06",
       "_id": "961fdacc-2f2c-4623-849b-d021a0be0883"
     },
     {

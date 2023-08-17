@@ -38,13 +38,14 @@ export const stationController = {
 
   async addReading(request, response) {
     const station = await stationStore.getStationById(request.params.id);
+    const date = new Date();
     const newReading = {
+      date: date.toISOString().replace('T', ' ').replace('Z', '').replace(/\.\d+/, ""),
       code: Number(request.body.code),
       temperature: Number(request.body.temperature),
       windSpeed: Number(request.body.windSpeed),
       windDirection: Number(request.body.windDirection),
       pressure: Number(request.body.pressure),
-      // fahrenheit: conversions.tempConversion(request.body.temperature),
     };
     console.log(`adding reading ${newReading.code}`);
     await readingStore.addReading(station._id, newReading);

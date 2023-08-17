@@ -111,15 +111,6 @@
       "stationid": "961fdacc-2f2c-4623-849b-d021a0be0883"
     },
     {
-      "code": 12,
-      "temperature": 2,
-      "windSpeed": 2,
-      "pressure": 2,
-      "_id": "21b5b9cf-227f-45b8-981a-e7bd7fc30a8f",
-      "stationid": "72766cbe-90eb-41b3-a413-24ad85c0e02f",
-      "windDirection": 5
-    },
-    {
       "code": 8,
       "temperature": 8,
       "windSpeed": 8,
@@ -129,12 +120,21 @@
       "windDirection": 6
     },
     {
-      "code": 9,
-      "temperature": 9,
-      "windSpeed": 9,
-      "windDirection": 9,
-      "pressure": 9,
-      "_id": "7465a1c9-f5f0-49f9-ba2c-3b7e6d7aafcf",
+      "code": 3,
+      "temperature": 3,
+      "windSpeed": 3,
+      "windDirection": 3,
+      "pressure": 3,
+      "_id": "c33fe750-b6ae-4c79-8a6c-5f3225b287a9",
+      "stationid": "72766cbe-90eb-41b3-a413-24ad85c0e02f"
+    },
+    {
+      "code": 10,
+      "temperature": 10,
+      "windSpeed": 10,
+      "windDirection": 10,
+      "pressure": 10,
+      "_id": "fd4fb115-6411-43e9-a099-510da29f25cd",
       "stationid": "72766cbe-90eb-41b3-a413-24ad85c0e02f"
     }
   ]

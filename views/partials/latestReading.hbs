@@ -33,6 +33,8 @@
                         <label class="label">Temperature</label>
                 <p>{{latestReading.temperature}} °C</p>
                 <p>{{fahrenheit}}°F</p>
+                <p>Max: {{maxTemp}}</p>
+                <p>Min: {{minTemp}}</p>
             </box>
         </div>
 
@@ -48,6 +50,8 @@
                 <p>{{beafourt}} Bft</p>
                 <p>{{windCompass}}</p>
                 <p>Feels like {{windChill}}</p>
+                <p>Max: {{maxWind}}</p>
+                <p>Min: {{minWind}}</p>
             </box>
         </div>
 
@@ -56,6 +60,8 @@
                 <i class="right floated huge icon">{{>icons/pressure}}</i>
                 <label class="label">Pressure</label>
                 <p>{{latestReading.pressure}}</p>
+                <p>Max: {{maxPressure}}</p>
+                <p>Min: {{minPressure}}</p>
                 </box>
         </div>
 

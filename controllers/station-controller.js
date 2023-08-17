@@ -2,6 +2,7 @@ import { stationStore } from "../models/station-store.js";
 import { readingStore } from "../models/reading-store.js";
 import { stationAnalytics } from "../utils/station-analytics.js";
 import { conversions } from "../utils/conversions.js";
+import { maxMin } from "../utils/maxMin.js";
 
 export const stationController = {
   async index(request, response) {
@@ -11,8 +12,12 @@ export const stationController = {
     const latestTemp = stationAnalytics.getLatestTemp(station);
     const latestWindSpeed = stationAnalytics.getLatestWindSpeed(station);
     const latestWindDirection = stationAnalytics.getLatestWindDirection(station);
-    // const minTemp = await stationAnalytics.minTemp(station);
-    // const maxTemp = await stationAnalytics.maxTemp(station);
+    const maxTemp = maxMin.getMaxTemp(station);
+    const minTemp = maxMin.getMinTemp(station);
+    const maxWind = maxMin.getMaxWind(station);
+    const minWind = maxMin.getMinWind(station);
+    const maxPressure = maxMin.getMaxPressure(station);
+    const minPressure = maxMin.getMinPressure(station);
     const viewData = {
       title: "Station",
       station: station,
@@ -21,6 +26,12 @@ export const stationController = {
       beafourt: conversions.beafourt(latestWindSpeed),
       windChill: stationAnalytics.getWindChill(latestTemp, latestWindSpeed),
       windCompass: conversions.degreesToCompass(latestWindDirection),
+      maxTemp: maxTemp,
+      minTemp: minTemp,
+      maxWind: maxWind,
+      minWind: minWind,
+      maxPressure: maxPressure,
+      minPressure: minPressure,
     };
     response.render("station-view", viewData);
   },

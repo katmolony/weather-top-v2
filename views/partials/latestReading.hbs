@@ -4,10 +4,8 @@
 
         <div class="column is-one-fifth">
             <box class="box">
+                <i class="icon"> {{>icons/location}}</i>
                 <label class="label">Station</label>
-                <span class="icon is-large">
-              <i class="fa-solid fas fa-2x fa-location-crosshairs"></i>
-              </span>
                 <p>{{station.name}}</p>
                 <p>Latitude: {{station.lat}}</p>
                 <p>Longitude: {{station.lng}}</p>
@@ -16,21 +14,23 @@
 
         <div class="column is-one-fifth">
             <box class="box">
+                <span class="icon">    
+                    <i class="right floated huge icon">
+                    {{>icons/weather}}</i>
+                    </span>
                 <label class="label">Weather</label>
-                <span class="icon is-large">
-              <i class="fa-solid fas fa-2x fa-cloud-sun"></i>
-          </span>
                 <p>{{latestReading.code}}</p>
             </box>
         </div>
 
         <div class="column is-one-fifth">
-
             <box class="box">
-                <label class="label">Temperature</label>
-                <span class="icon is-large">
-              <i class="fa-solid fas fa-2x fa-temperature-three-quarters"></i>
-          </span>
+                <span class="icon">
+                    <i class="right floated huge icon">
+                        {{>icons/temp}}
+                        </i>
+                        </span>
+                        <label class="label">Temperature</label>
                 <p>{{latestReading.temperature}} °C</p>
                 <p>{{fahrenheit}}°F</p>
             </box>
@@ -38,10 +38,12 @@
 
         <div class="column is-one-fifth">
             <box class="box">
+                <span class="icon">    
+                    <i></i>
+                        {{>icons/wind}}
+                        </i>
+                        </span>
                 <label class="label">Wind</label>
-                <span class="icon is-large">
-              <i class="fa-solid fas fa-2x fa-wind"></i>
-          </span>
                 <p>{{latestReading.windSpeed}}</p>
                 <p>{{beafourt}} Bft</p>
                 <p>{{windCompass}}</p>
@@ -51,12 +53,10 @@
 
         <div class="column is-one-fifth">
             <box class="box">
+                <i class="right floated huge icon">{{>icons/pressure}}</i>
                 <label class="label">Pressure</label>
-                <span class="icon is-large">
-              <i class="fa-solid fas fa-2x fa-water"></i>
-          </span>
-          <p>{{latestReading.pressure}}</p>
-            </box>
+                <p>{{latestReading.pressure}}</p>
+                </box>
         </div>
 
     </div>

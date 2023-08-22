@@ -17,6 +17,9 @@ router.post("/authenticate", accountsController.authenticate);
 router.get("/dashboard", dashboardController.index);
 router.get("/about", aboutController.index);
 
+router.get("/profile", accountsController.profile);
+router.post("/profile/updateprofile/:_id", accountsController.profileUpdate);
+
 router.post("/dashboard/addstation", dashboardController.addStation);
 router.get("/dashboard/deletestation/:id", dashboardController.deleteStation);
 

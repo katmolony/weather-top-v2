@@ -11,6 +11,18 @@ export const stationAnalytics = {
     return latestReading;
   },
 
+  getLatestCode(station) {
+    let latestCode = null;
+    if (station.readings.length > 0) {
+      for (let i = station.readings.length; i <= station.readings.length; i++) {
+        {
+          latestCode = station.readings[i - 1].code;
+        }
+      }
+    }
+    return latestCode;
+  },
+
   getLatestTemp(station) {
     let latestTemp = null;
     if (station.readings.length > 0) {

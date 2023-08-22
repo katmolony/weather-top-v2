@@ -20,7 +20,29 @@ export const conversions = {
     // weatherCodeIcons.set(700, "snowflake");
     // weatherCodeIcons.set(800, "bolt");
 
-  tempConversion(temp) {
+    codeConversion(code) {
+      if (code <= 100) {
+          return "Clear";
+      } else if (code <= 200) {
+          return "Partial clouds";
+      } else if (code <= 300) {
+          return "Cloudy";
+      } else if (code <= 400) {
+          return "Light Showers";
+      } else if (code <= 500) {
+          return "Heavy Showers";
+      } else if (code <= 600) {
+          return "Rain";
+      } else if (code <= 700) {
+          return "Snow";
+      } else if (code <= 800) {
+          return "Thunder";
+      } else {
+          return "No Code";
+      }
+  },
+
+    tempConversion(temp) {
     let fahrenheit = 0;
     if (temp  != null) {
       fahrenheit = (temp * 1.8) + 32;

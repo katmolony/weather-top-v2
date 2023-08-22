@@ -9,6 +9,7 @@ export const stationController = {
     const station = await stationStore.getStationById(request.params.id);
     // const reading = await readingStore.getReadingsByStationId(request.params.readingid);
     const latestReading = stationAnalytics.getLatestReading(station);
+    const latestCode = stationAnalytics.getLatestCode(station);
     const latestTemp = stationAnalytics.getLatestTemp(station);
     const latestWindSpeed = stationAnalytics.getLatestWindSpeed(station);
     const latestWindDirection = stationAnalytics.getLatestWindDirection(station);
@@ -26,6 +27,7 @@ export const stationController = {
       title: "Station",
       station: station,
       latestReading: latestReading,
+      codeConversion: conversions.codeConversion(latestCode),
       fahrenheit: conversions.tempConversion(latestTemp),
       beafourt: conversions.beafourt(latestWindSpeed),
       windChill: stationAnalytics.getWindChill(latestTemp, latestWindSpeed),

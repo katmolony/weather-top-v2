@@ -62,33 +62,6 @@
     },
     {
       "date": "2023-08-17 13:40:25",
-      "code": 1,
-      "temperature": 2,
-      "windSpeed": 3,
-      "pressure": 4,
-      "_id": "4559b1d6-72b0-4b48-b082-eca4f695db22",
-      "stationid": "05"
-    },
-    {
-      "date": "2023-08-17 13:40:25",
-      "code": 22,
-      "temperature": 0,
-      "windSpeed": 0,
-      "pressure": 0,
-      "_id": "e345c9f1-b26f-47e5-b320-5fe48442a1a1",
-      "stationid": "05"
-    },
-    {
-      "date": "2023-08-17 13:40:25",
-      "code": 66,
-      "temperature": 66,
-      "windSpeed": 66,
-      "pressure": 66,
-      "_id": "a0e6fd72-13dc-493f-9d78-5bae1881197c",
-      "stationid": "05"
-    },
-    {
-      "date": "2023-08-17 13:40:25",
       "code": 3,
       "temperature": 141,
       "windSpeed": 1,
@@ -142,46 +115,6 @@
       "pressure": 4,
       "_id": "569e46eb-ae56-48e0-a04a-c5123d03d48f",
       "stationid": "90adb9cb-8671-4cca-ac44-b7f5bfa422a8"
-    },
-    {
-      "date": "2023-08-22 23:34:35",
-      "code": 0,
-      "temperature": 2,
-      "windSpeed": 2,
-      "windDirection": 2,
-      "pressure": 2,
-      "_id": "a101d342-be97-4a08-bb85-2c93d99cd86c",
-      "stationid": "72766cbe-90eb-41b3-a413-24ad85c0e02f"
-    },
-    {
-      "date": "2023-08-22 23:34:44",
-      "code": 0,
-      "temperature": 3,
-      "windSpeed": 3,
-      "windDirection": 3,
-      "pressure": 3,
-      "_id": "8f8d394d-0726-45bf-841a-695020f2501c",
-      "stationid": "72766cbe-90eb-41b3-a413-24ad85c0e02f"
-    },
-    {
-      "date": "2023-08-22 23:35:15",
-      "code": 0,
-      "temperature": 2,
-      "windSpeed": 2,
-      "windDirection": 2,
-      "pressure": 8,
-      "_id": "e83bc857-7aac-42a3-a5ca-970240001ec4",
-      "stationid": "72766cbe-90eb-41b3-a413-24ad85c0e02f"
-    },
-    {
-      "date": "2023-08-22 23:35:24",
-      "code": 0,
-      "temperature": 1,
-      "windSpeed": 1,
-      "windDirection": 1,
-      "pressure": 4,
-      "_id": "32a51f1d-6181-40d7-8e86-f2569e6798b7",
-      "stationid": "72766cbe-90eb-41b3-a413-24ad85c0e02f"
     }
   ]
 }

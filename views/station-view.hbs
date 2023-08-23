@@ -10,4 +10,12 @@
   </div>
   {{> list-readings}}
   {{> add-reading}}
+
+  <section class="section">
+    <form action="/station/{{station._id}}/addreport"method="POST">    
+      <div class="field is-grouped">
+        <button class="button is-danger">Auto Generate Reading for {{station.name}}</button>
+      </div>
+    </form>
+  </section>
 </section>

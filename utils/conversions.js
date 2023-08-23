@@ -1,5 +1,15 @@
 export const conversions = { 
   
+  // const weatherConditions = new Map();
+  // weatherConditions.set(100, { description: "Clear", icon: "../images/clear.jpg" });
+  // weatherConditions.set(200, { description: "Partial Clouds", icon: "../images/clouds.jpg" });
+  // weatherConditions.set(300, { description: "Cloudy", icon: "../images/cloudy.jpg" });
+  // weatherConditions.set(400, { description: "Light Showers", icon: "../images/lightShowers.jpg" });
+  // weatherConditions.set(500, { description: "Heavy Showers", icon: "../images/heavyShowers.jpg" });
+  // weatherConditions.set(600, { description: "Rain", icon: "../images/rain.jpg" });
+  // weatherConditions.set(700, { description: "Snow", icon: "../images/snow.jpg" });
+  // weatherConditions.set(800, { description: "Thunder", icon: "../images/thunder.jpg" });
+  
 //  weatherCodes = new Map([
 //     weatherCodes.set(100, "Clear"),
 //     weatherCodes.set(200, "Partial Clouds"),

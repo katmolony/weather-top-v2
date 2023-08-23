@@ -5,7 +5,69 @@
       {{name}}
     </a>
   </h2>
-  {{> latestReading }}
+<div class="container">
+    <div class="columns">
+
+        <div class="column is-one-fifth">
+            <box class="box">
+                <i class="icon"> {{>icons/location}}</i>
+                {{!-- <label class="label">Station</label>
+                <p>{{station.name}}</p>
+                <p>Latitude: {{station.lat}}</p>
+                <p>Longitude: {{station.lng}}</p> --}}
+            </box>
+        </div>
+
+        <div class="column is-one-fifth">
+            <box class="box">
+                <i class="icon">{{>icons/weather}}</i>
+                <label class="label">Weather</label>
+                <p>{{latestReading.code}}</p>
+                {{!-- <p>{{codeConversion}}</p>
+                <p>{{codeDiscripition}}</p>
+                <p>{{codeIcon}}</p> --}}
+                {{!-- <img src={{codeIcon}}> --}}
+            </box>
+        </div>
+
+        <div class="column is-one-fifth">
+            <box class="box">
+                <i class="icon">{{>icons/temp}}</i>
+                <label class="label">Temperature</label>
+                <p>{{latestReading.temperature}} °C</p>
+                {{!-- <p>{{fahrenheit}} °F</p>
+                <p>Max: {{maxTemp}}</p>
+                <p>Min: {{minTemp}}</p>
+                <p>Trend: {{tempTrend}}</p> --}}
+            </box>
+        </div>
+
+        <div class="column is-one-fifth">
+            <box class="box">
+                <i class="icon">{{>icons/wind}}</i>
+                <label class="label">Wind</label>
+                {{!-- <p>{{beafourt}} Bft</p>
+                <p>{{windCompass}}</p>
+                <p>Feels like {{windChill}}</p>
+                <p>Max: {{maxWind}}</p>
+                <p>Min: {{minWind}}</p>
+                <p>Trend: {{windTrend}}</p> --}}
+            </box>
+        </div>
+
+        <div class="column is-one-fifth">
+            <box class="box">
+                <i class="icon">{{>icons/pressure}}</i>
+                <label class="label">Pressure</label>
+                <p>{{latestReading.pressure}} hpa</p>
+                {{!-- <p>Max: {{maxPressure}}</p>
+                <p>Min: {{minPressure}}</p>
+                <p>Trend: {{pressureTrend}}</p> --}}
+            </box>
+        </div>
+
+    </div>
+</div>
     <a href="/station/{{_id}}" class="button">
     {{>icons/open}}
   </a>

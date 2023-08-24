@@ -56,7 +56,7 @@ export const conversions = {
     let fahrenheit = 0;
     if (temp  != null) {
       fahrenheit = (temp * 1.8) + 32;
-      return fahrenheit;
+      return fahrenheit.toFixed(2);
     }
     else return null;
   },

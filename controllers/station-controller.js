@@ -27,6 +27,8 @@ export const stationController = {
     const tempTrend = stationAnalytics.getTempTrend(station);
     const windTrend = stationAnalytics.getWindTrend(station);
     const pressureTrend = stationAnalytics.getPressureTrend(station);
+
+//    const report = this.addreport();
     
     const viewData = {
       title: "Station",
@@ -83,12 +85,23 @@ export const stationController = {
 
     const result = await axios.get(requestUrl);
     if (result.status == 200) {
+      // console.log(result.data);
       const reading = result.data.current;
       report.code = reading.weather[0].id;
       report.temperature = reading.temp;
       report.windSpeed = reading.wind_speed;
       report.windDirection = reading.wind_deg;
       report.pressure = reading.pressure;
+      
+      report.tempTrend = [];
+      report.trendLabels = [];
+      const trends = result.data.daily;
+      for (let i=0; i<trends.length; i++) {
+        report.tempTrend.push(trends[i].temp.day);
+        const date = new Date(trends[i].dt * 1000);
+        report.trendLabels.push(`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}` );
+      }
+      console.log(report);
     };
     await readingStore.addReading(station._id, report);
     response.redirect("/station/" + station._id);

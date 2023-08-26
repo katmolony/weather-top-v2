@@ -1,7 +1,29 @@
+<style>
+  #map {
+    height: 180px;
+  }
+</style>
 {{> menu active="dashboard"}}
 
 <section class="section">
   {{> dashboard-info}}
   {{> list-stations}}
+  <div id="map">
+    <script>var map = L.map('map').setView([53.7798, -7.3055], 5);
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+      }).addTo(map);
+
+      var marker = L.marker([52.16, -7.152]).addTo(map); 
+
+      function onMapClick(e) {
+    alert("You clicked the map at " + e.latlng);
+}
+
+map.on('click', onMapClick);
+
+    </script>
+  </div>
   {{> add-station}}
 </section>

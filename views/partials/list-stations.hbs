@@ -5,16 +5,17 @@
       {{name}}
     </a>
   </h2>
+    {{> latestReading}}
 <div class="container">
     <div class="columns">
 
         <div class="column is-one-fifth">
             <box class="box">
                 <i class="icon"> {{>icons/location}}</i>
-                {{!-- <label class="label">Station</label>
-                <p>{{station.name}}</p>
-                <p>Latitude: {{station.lat}}</p>
-                <p>Longitude: {{station.lng}}</p> --}}
+                <label class="label">Station</label>
+                <p>{{name}}</p>
+                <p>Latitude: {{lat}}</p>
+                <p>Longitude: {{lng}}</p>
             </box>
         </div>
 
@@ -23,8 +24,8 @@
                 <i class="icon">{{>icons/weather}}</i>
                 <label class="label">Weather</label>
                 <p>{{latestReading.code}}</p>
-                {{!-- <p>{{codeConversion}}</p>
-                <p>{{codeDiscripition}}</p>
+                <p>{{station.codeConversion}}</p>
+                {{!-- <p>{{stations.codeDiscripition}}</p>
                 <p>{{codeIcon}}</p> --}}
                 {{!-- <img src={{codeIcon}}> --}}
             </box>

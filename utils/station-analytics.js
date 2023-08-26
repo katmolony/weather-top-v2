@@ -1,5 +1,23 @@
+import { initStore } from "../utils/store-utils.js";
+const db = initStore("readings");
+
 export const stationAnalytics = {
+
+  // async getLatestReading(station) {
+  //   await db.read();
+
+  //   const readingsForStation = db.data.readings.filter((reading) => reading.stationid === station);
+
+  //   if (readingsForStation.length === 0) {
+  //     return null;
+  //   }
+    
+  //   return readingsForStation[readingsForStation.length-1];
+
+  // }, 
+
   getLatestReading(station) {
+  
     let latestReading = null;
     if (station.readings.length > 0) {
       for (let i = station.readings.length; i <= station.readings.length; i++) {

@@ -98,9 +98,11 @@ export const stationController = {
       const trends = result.data.daily;
       for (let i=0; i<trends.length; i++) {
         report.tempTrend.push(trends[i].temp.day);
+        // const date = new Date(trends[i].dt*1000).toLocaleDateString("en-uk");
+        // report.labels.push(`${date}`);
         const date = new Date(trends[i].dt * 1000);
-        report.trendLabels.push(`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}` );
-      }
+       report.trendLabels.push(`${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}` );
+       }
       console.log(report);
     };
     await readingStore.addReading(station._id, report);

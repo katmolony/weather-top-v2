@@ -1,0 +1,27 @@
+<div class="box" id="pressureChart"></div>
+<script>
+  const dataPressure = {
+    labels: [
+      {{#each latestReading.trendLabels}}
+        "{{this}}",
+      {{/each}}
+    ],
+    datasets: [
+      {
+        name: "Pressure", type: "line",
+        values: [
+          {{#each latestReading.pressureTrend}}
+            {{this}},
+          {{/each}}
+        ]
+      }
+    ]
+  }
+
+  const pressureChart = new frappe.Chart("#pressureChart", {
+    title: "Pressure Trend",
+    data: dataPressure,
+    type: 'line',
+    height: 250,
+  })
+</script>

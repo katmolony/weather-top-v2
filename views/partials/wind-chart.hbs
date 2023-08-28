@@ -1,0 +1,27 @@
+<div class="box" id="windChart"></div>
+<script>
+  const dataWind = {
+    labels: [
+      {{#each latestReading.trendLabels}}
+        "{{this}}",
+      {{/each}}
+    ],
+    datasets: [
+      {
+        name: "Wind Speed", type: "line",
+        values: [
+          {{#each latestReading.windTrend}}
+            {{this}},
+          {{/each}}
+        ]
+      }
+    ]
+  }
+
+  const windChart = new frappe.Chart("#windChart", {
+    title: "Wind Speed Trend",
+    data: dataWind,
+    type: 'line',
+    height: 250,
+  })
+</script>

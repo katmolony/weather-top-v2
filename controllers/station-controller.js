@@ -88,10 +88,14 @@ export const stationController = {
     const result = await axios.get(requestUrl);
     if (result.status == 200) {
       newReading.tempTrend = [];
+      newReading.windTrend = [];
+      newReading.pressureTrend = [];
       newReading.trendLabels = [];
       const trends = result.data.daily;
       for (let i = 0; i < trends.length; i++) {
         newReading.tempTrend.push(trends[i].temp.day);
+        newReading.windTrend.push(trends[i].wind_speed);
+        newReading.pressureTrend.push(trends[i].pressure);
         const date = new Date(trends[i].dt * 1000);
         newReading.trendLabels.push(`${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`);
       }
@@ -126,9 +130,15 @@ export const stationController = {
 
       report.tempTrend = [];
       report.trendLabels = [];
+      report.windTrend = [];
+      report.pressureTrend = [];
+
       const trends = result.data.daily;
       for (let i = 0; i < trends.length; i++) {
         report.tempTrend.push(trends[i].temp.day);
+
+        report.windTrend.push(trends[i].wind_speed);
+        report.pressureTrend.push(trends[i].pressure);
         // const date = new Date(trends[i].dt*1000).toLocaleDateString("en-uk");
         // report.labels.push(`${date}`);
         const date = new Date(trends[i].dt * 1000);

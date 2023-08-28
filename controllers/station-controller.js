@@ -3,8 +3,8 @@ import { readingStore } from "../models/reading-store.js";
 import { stationAnalytics } from "../utils/station-analytics.js";
 import { conversions } from "../utils/conversions.js";
 import { maxMin } from "../utils/maxMin.js";
-// import { weatherCondition } from "../utils/map.js";
-// import { weatherConditions } from "../utils/map.js";
+import { weatherCondition } from "../utils/map.js";
+import { weatherConditions } from "../utils/map.js";
 import axios from "axios";
 
 const oneCallRequest = `https://api.openweathermap.org/data/2.5/onecall?lat=52.160858&lon=-7.152420&units=metric&appid=6f31a0fd23d1415ef151dd57611408aa`
@@ -13,20 +13,28 @@ export const stationController = {
   async index(request, response) {
     const station = await stationStore.getStationById(request.params.id);
     // const reading = await readingStore.getReadingsByStationId(request.params.readingid);
+    
     const latestReading = stationAnalytics.getLatestReading(station);
+
     const latestCode = stationAnalytics.getLatestCode(station);
     const latestTemp = stationAnalytics.getLatestTemp(station);
     const latestWindSpeed = stationAnalytics.getLatestWindSpeed(station);
     const latestWindDirection = stationAnalytics.getLatestWindDirection(station);
+    
     const maxTemp = maxMin.getMaxTemp(station);
     const minTemp = maxMin.getMinTemp(station);
     const maxWind = maxMin.getMaxWind(station);
     const minWind = maxMin.getMinWind(station);
     const maxPressure = maxMin.getMaxPressure(station);
     const minPressure = maxMin.getMinPressure(station);
+    
     const tempTrend = stationAnalytics.getTempTrend(station);
     const windTrend = stationAnalytics.getWindTrend(station);
     const pressureTrend = stationAnalytics.getPressureTrend(station);
+
+    const lat = station.lat;
+    const lng = station.lng;
+    const name = station.name;
 
 //    const report = this.addreport();
     
@@ -35,8 +43,11 @@ export const stationController = {
       station: station,
       latestReading: latestReading,
       codeConversion: conversions.codeConversion(latestCode),
+      
+      //Needs to be fixed!
       // codeDiscripition: weatherCondition.weatherDescription(latestCode),
       // codeIcon: weatherCondition.weatherIcon(latestCode),
+      
       fahrenheit: conversions.tempConversion(latestTemp),
       beafourt: conversions.beafourt(latestWindSpeed),
       windChill: stationAnalytics.getWindChill(latestTemp, latestWindSpeed),
@@ -50,6 +61,9 @@ export const stationController = {
       tempTrend: tempTrend,
       windTrend: windTrend,
       pressureTrend: pressureTrend,
+      lat: lat,
+      lng: lng,
+      name: name,
     };
     response.render("station-view", viewData);
   },

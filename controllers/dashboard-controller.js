@@ -2,25 +2,59 @@ import { stationStore } from "../models/station-store.js";
 import { accountsController } from "./accounts-controller.js";
 import { stationAnalytics } from "../utils/station-analytics.js";
 import { readingStore } from "../models/reading-store.js";
+import { conversions } from "../utils/conversions.js";
+import { maxMin } from "../utils/maxMin.js";
 
 export const dashboardController = {
   async index(request, response) {
     const loggedInUser = await accountsController.getLoggedInUser(request);
     const stations = await stationStore.getStationsByUserId(loggedInUser._id);
 
+  //  Add latest readings to each station
+  for(const station of stations){
+    const latestReading = await stationAnalytics.getLatestReadingAllStation(station._id);
+    station.latestReading = latestReading;
+    // lat = station.lat;
+    // station.lng = lng;
+
+    if (latestReading != null) {
+      station.fahrenheit = conversions.tempConversion(latestReading.temperature);
+      station.beafourt = conversions.beafourt(latestReading.windSpeed);
+      station.windChill = stationAnalytics.getWindChill(latestReading.temperature, latestReading.windSpeed);
+      station.windCompass = conversions.degreesToCompass(latestReading.windDirection);
+      station.codeConversion = conversions.codeConversion(latestReading.code);
+    }
+
+    const readings = await stationStore.getStationById(station._id)
+ 
+    //Max and Min Variables
+      const maxTemp = maxMin.getMaxTemp(readings);
+      station.maxTemp = maxTemp;
+     const minTemp = maxMin.getMinTemp(readings);
+     station.minTemp = minTemp;
+    const maxWind = maxMin.getMaxWind(readings);
+    station.maxWind = maxWind;
+     const minWind = maxMin.getMinWind(readings);
+     station.minWind = minWind;
+     const maxPressure = maxMin.getMaxPressure(readings);
+     station.maxPressure = maxPressure;
+    const minPressure = maxMin.getMinPressure(readings);
+    station.minPressure = minPressure;
+
+    //Trend Variables
+    const tempTrend = stationAnalytics.getTempTrend(readings);
+    station.tempTrend = tempTrend
+    const windTrend = stationAnalytics.getWindTrend(readings);
+    station.windTrend = windTrend;
+    const pressureTrend = stationAnalytics.getPressureTrend(readings);
+    station.pressureTrend = pressureTrend;
+    
+  };
+  
 
     //sort list of stations in alphabetical order
     const sortedList = stations.sort((a, b) =>
     a.name.localeCompare(b.name));
-
-    //Add latest readings to each station
-    // for (const station of stations) {
-    //   const stationId = await stationStore.getStationById(request.params.id);
-    //   const latestReading = await stationAnalytics.getLatestReading(station._id);
-    //   station.latestReading = latestReading;
-    //   const reading = await readingStore.getReadingsByStationId(stationId);
-    //   station.readings = reading;
-    //  };
 
     const viewData = {
       title: "Station Dashboard",

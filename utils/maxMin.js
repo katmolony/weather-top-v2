@@ -1,4 +1,10 @@
+import { v4 } from "uuid";
+import { initStore } from "../utils/store-utils.js";
+
+// const db = initStore("readings");
+
 export const maxMin = {
+
     getMaxTemp(station) {
         let maxTemp = 0;
         if (station.readings.length > 0) {

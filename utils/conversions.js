@@ -48,7 +48,7 @@ export const conversions = {
       } else if (code <= 800) {
           return "Thunder";
       } else {
-          return "No Code";
+          return "Unknown code";
       }
   },
 

@@ -28,6 +28,13 @@
       "lng": "67",
       "userid": "7189b874-6a50-476b-86df-27fd5e17ba06",
       "_id": "1b03b659-65ab-4d80-87ef-2a607b3dd9a9"
+    },
+    {
+      "name": "test",
+      "lat": "30",
+      "lng": "-50",
+      "userid": "7189b874-6a50-476b-86df-27fd5e17ba06",
+      "_id": "2ddfbdc0-661c-47b8-98b6-d9fb846ea14b"
     }
   ]
 }

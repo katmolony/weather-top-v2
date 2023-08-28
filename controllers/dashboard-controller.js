@@ -10,51 +10,48 @@ export const dashboardController = {
     const loggedInUser = await accountsController.getLoggedInUser(request);
     const stations = await stationStore.getStationsByUserId(loggedInUser._id);
 
-  //  Add latest readings to each station
-  for(const station of stations){
-    const latestReading = await stationAnalytics.getLatestReadingAllStation(station._id);
-    station.latestReading = latestReading;
-    // lat = station.lat;
-    // station.lng = lng;
+    //  Add latest readings to each station
+    for (const station of stations) {
+      const latestReading = await stationAnalytics.getLatestReadingAllStation(station._id);
+      station.latestReading = latestReading;
 
-    if (latestReading != null) {
-      station.fahrenheit = conversions.tempConversion(latestReading.temperature);
-      station.beafourt = conversions.beafourt(latestReading.windSpeed);
-      station.windChill = stationAnalytics.getWindChill(latestReading.temperature, latestReading.windSpeed);
-      station.windCompass = conversions.degreesToCompass(latestReading.windDirection);
-      station.codeConversion = conversions.codeConversion(latestReading.code);
-    }
+      if (latestReading != null) {
+        station.fahrenheit = conversions.tempConversion(latestReading.temperature);
+        station.beafourt = conversions.beafourt(latestReading.windSpeed);
+        station.windChill = stationAnalytics.getWindChill(latestReading.temperature, latestReading.windSpeed);
+        station.windCompass = conversions.degreesToCompass(latestReading.windDirection);
+        station.codeConversion = conversions.codeConversion(latestReading.code);
+      }
 
-    const readings = await stationStore.getStationById(station._id)
- 
-    //Max and Min Variables
+      const readings = await stationStore.getStationById(station._id)
+
+      //Max and Min Variables
       const maxTemp = maxMin.getMaxTemp(readings);
       station.maxTemp = maxTemp;
-     const minTemp = maxMin.getMinTemp(readings);
-     station.minTemp = minTemp;
-    const maxWind = maxMin.getMaxWind(readings);
-    station.maxWind = maxWind;
-     const minWind = maxMin.getMinWind(readings);
-     station.minWind = minWind;
-     const maxPressure = maxMin.getMaxPressure(readings);
-     station.maxPressure = maxPressure;
-    const minPressure = maxMin.getMinPressure(readings);
-    station.minPressure = minPressure;
+      const minTemp = maxMin.getMinTemp(readings);
+      station.minTemp = minTemp;
+      const maxWind = maxMin.getMaxWind(readings);
+      station.maxWind = maxWind;
+      const minWind = maxMin.getMinWind(readings);
+      station.minWind = minWind;
+      const maxPressure = maxMin.getMaxPressure(readings);
+      station.maxPressure = maxPressure;
+      const minPressure = maxMin.getMinPressure(readings);
+      station.minPressure = minPressure;
 
-    //Trend Variables
-    const tempTrend = stationAnalytics.getTempTrend(readings);
-    station.tempTrend = tempTrend
-    const windTrend = stationAnalytics.getWindTrend(readings);
-    station.windTrend = windTrend;
-    const pressureTrend = stationAnalytics.getPressureTrend(readings);
-    station.pressureTrend = pressureTrend;
-    
-  };
-  
+      //Trend Variables
+      const tempTrend = stationAnalytics.getTempTrend(readings);
+      station.tempTrend = tempTrend
+      const windTrend = stationAnalytics.getWindTrend(readings);
+      station.windTrend = windTrend;
+      const pressureTrend = stationAnalytics.getPressureTrend(readings);
+      station.pressureTrend = pressureTrend;
+
+    };
 
     //sort list of stations in alphabetical order
     const sortedList = stations.sort((a, b) =>
-    a.name.localeCompare(b.name));
+      a.name.localeCompare(b.name));
 
     const viewData = {
       title: "Station Dashboard",
@@ -64,11 +61,11 @@ export const dashboardController = {
     let viewDataString = JSON.stringify(viewData); // Debug Remove Later
     let viewDateObject = JSON.parse(viewDataString); // Debug Remove Later
     console.dir(viewDateObject, { depth: null, colors: true }); // Debug Remove Later
-    
+
     console.log("dashboard rendering");
     response.render("dashboard-view", viewData);
   },
-  
+
   async addStation(request, response) {
     const loggedInUser = await accountsController.getLoggedInUser(request);
     const newStation = {

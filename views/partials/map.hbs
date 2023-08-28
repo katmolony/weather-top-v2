@@ -1,0 +1,29 @@
+<style>
+    #map {
+        height: 400px;
+    }
+</style>
+<div class="block">
+  <div id="map">
+    <script>var map = L.map('map').setView([53.7798, -7.3055], 6);
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+      }).addTo(map);
+      
+      {{#each stations}}
+
+    var marker = L.marker( [{{lat}},
+    {{lng}}] ).addTo(map) .bindPopup('{{name}}');
+
+  {{/each}}
+
+      function onMapClick(e) {
+    alert("You clicked the map at " + e.latlng);
+}
+
+map.on('click', onMapClick);
+
+    </script>
+  </div>
+  </div>

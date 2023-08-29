@@ -1,3 +1,4 @@
+
 export const conversions = { 
   
   // const weatherConditions = new Map();

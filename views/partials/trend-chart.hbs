@@ -1,37 +1,10 @@
-<div class="box" id="chart"></div>
-<script>
-  const dataTemp = {
-    labels: [
-      {{#each latestReading.trendLabels}}
-        "{{this}}",
-      {{/each}}
-    ],
-    datasets: [
-      {
-        name: "Temperature", type: "line",
-        values: [
-          {{#each latestReading.tempTrend}}
-            {{this}},
-          {{/each}}
-        ]
-      }
-    ]
-  }
-
-  const chart = new frappe.Chart("#chart", {
-    title: "Temperature Trend",
-    data: dataTemp,
-    type: 'line',
-    height: 250,
-  })
-</script>
-
 <div class="block">
-<span id="showHide" class="button is-primary is-centered"> Hide Trends
+<span id="showHide" class="button is-primary is-centered"> Hide Weather Trends
 </span>
 </div>
 
 <div id="foo" style="display">
+    {{>temp-chart}}
     {{> wind-chart}}
     {{> pressure-chart}}
 </div>
@@ -41,10 +14,10 @@ document.getElementById("showHide").onclick = function() {
     var theDiv = document.getElementById("foo");
     if(theDiv.style.display == 'none') {
         theDiv.style.display = 'block';
-        this.innerHTML = 'Hide Trends';
+        this.innerHTML = 'Hide Weather Trends';
     } else {
         theDiv.style.display = 'none';
-        this.innerHTML = 'Show More Trends';
+        this.innerHTML = 'Show Weather Trends';
     }
 }
 </script>

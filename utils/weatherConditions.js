@@ -1,9 +1,9 @@
-import { initStore } from "../utils/store-utils.js";
+import { initStore } from "./store-utils.js";
 
 const db = initStore("readings");
 
 export const weatherConditions = new Map();
-weatherConditions.set(100, { description: "Clear", icon: "../icons/clear.hbs" });
+weatherConditions.set(100, { description: "Clear", icon: ">icons/clear" });
 weatherConditions.set(200, { description: "Partial Clouds", icon: "../clouds.hbs" });
 weatherConditions.set(300, { description: "Cloudy", icon: "../images/cloudy.jpg" });
 weatherConditions.set(400, { description: "Light Showers", icon: "../images/lightShowers.jpg" });
@@ -14,16 +14,12 @@ weatherConditions.set(800, { description: "Thunder", icon: "../images/thunder.jp
 
 export const weatherCondition = {
     weatherDescription(code) {
-        if (readings.length > 0) {
         return weatherConditions.get(code).description;
-        }
-        else return "no readings";
+
     },
 
     weatherIcon(code) {
-        if (readings.length > 0) {
+
         return weatherConditions.get(code).icon;
         }
-        else return "no readings";
-    },
-}
+    }

@@ -1,4 +1,5 @@
 import { initStore } from "../utils/store-utils.js";
+import { weatherConditions } from "./weatherConditions.js";
 
 const db = initStore("readings");
 
@@ -153,4 +154,20 @@ export const stationAnalytics = {
       }
     }
   },
+
+  // async weatherCondition (station) {
+  //   // weatherDescription(code) {
+  //   //     if (station.readings.length > 0) {
+  //   //     return weatherConditions.get(code).description;
+  //   //     }
+  //   //     else return "no readings";
+  //   // },
+
+  //   let weatherIcon(code) {
+  //       if (station.readings.length > 0) {
+  //       return weatherConditions.get(code).icon;
+  //       }
+  //       else return "no readings";
+  //   },
 }
+

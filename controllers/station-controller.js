@@ -3,8 +3,8 @@ import { readingStore } from "../models/reading-store.js";
 import { stationAnalytics } from "../utils/station-analytics.js";
 import { conversions } from "../utils/conversions.js";
 import { maxMin } from "../utils/maxMin.js";
-import { weatherCondition } from "../utils/map.js";
-import { weatherConditions } from "../utils/map.js";
+import { weatherCondition } from "../utils/weatherConditions.js";
+import { weatherConditions } from "../utils/weatherConditions.js";
 import axios from "axios";
 
 const oneCallRequest = `https://api.openweathermap.org/data/2.5/onecall?lat=52.160858&lon=-7.152420&units=metric&appid=6f31a0fd23d1415ef151dd57611408aa`
@@ -36,6 +36,9 @@ export const stationController = {
     const lng = station.lng;
     const name = station.name;
 
+    // const weatherIcon = weatherCondition.weatherIcon(latestCode);
+    // const weatherDescription = weatherCondition.weatherDescription(latestCode);
+
     //    const report = this.addreport();
 
     const viewData = {
@@ -64,6 +67,9 @@ export const stationController = {
       lat: lat,
       lng: lng,
       name: name,
+
+      // weatherIcon: weatherIcon,
+      // weatherDescription: weatherDescription,
     };
     response.render("station-view", viewData);
   },

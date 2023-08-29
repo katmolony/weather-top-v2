@@ -13,13 +13,27 @@
 
         <div class="column is-one-fifth">
             <box class="box">
-                <i class="icon">{{>icons/weather}}</i>
+                <i class="icon">{{#if (eq codeConversion 'Rain')}}
+                    <i class="fas fa-cloud-rain"></i>
+                    {{else if (eq codeConversion 'Cloudy')}}
+                    <i class="fas fa-cloud"></i>
+                    {{else if (eq codeConversion "Partial clouds")}}
+                    <i class="fas fa-cloud-sun"></i>
+                    {{else if (eq codeConversion 'Clear')}}
+                    <i class="fas fa-sun"></i>
+                    {{else if (eq codeConversion 'Light Showers')}}
+                    <i class="fas fa-cloud-sun-rain"></i>
+                    {{else if (eq codeConversion 'Heavy Showers')}}
+                    <i class="fas fa-cloud-showers-heavy"></i>
+                    {{else if (eq codeConversion 'Snow')}}
+                    <i class="fas fa-snowflake"></i>
+                    {{else if (eq codeConversion 'Thunder')}}
+                    <i class="fas fa-cloud-bolt"></i>
+                    {{else}}
+                    <i></i>
+                    {{/if}}</i>
                 <label class="label">Weather</label>
-                <p>{{latestReading.code}}</p>
                 <p>{{codeConversion}}</p>
-                <p>{{codeDiscripition}}</p>
-                <p>{{codeIcon}}</p>
-                {{!-- <img src={{codeIcon}}> --}}
             </box>
         </div>
 
@@ -31,7 +45,13 @@
                 <p>{{fahrenheit}} °F</p>
                 <p>Max: {{maxTemp}}</p>
                 <p>Min: {{minTemp}}</p>
-                <p>Trend: {{tempTrend}}</p>
+                    {{#if (eq tempTrend 'rising')}}
+                    <p>Trend: <i class="fas fa-arrow-up"></i></p>
+                    {{else if (eq tempTrend 'falling' )}}
+                    <p>Trend:<i class="fas fa-arrow-down"></i></p>
+                    {{else}}
+                    <i></i>
+                    {{/if}}
             </box>
         </div>
 
@@ -44,7 +64,13 @@
                 <p>Feels like {{windChill}}</p>
                 <p>Max: {{maxWind}}</p>
                 <p>Min: {{minWind}}</p>
-                <p>Trend: {{windTrend}}</p>
+                    {{#if (eq windTrend 'rising')}}
+                    <p>Trend: <i class="fas fa-arrow-up"></i></p>
+                    {{else if (eq windTrend 'falling' )}}
+                    <p>Trend: <i class="fas fa-arrow-down"></i></p>
+                    {{else}}
+                    <i></i>
+                    {{/if}}
             </box>
         </div>
 
@@ -55,7 +81,15 @@
                 <p>{{latestReading.pressure}} hpa</p>
                 <p>Max: {{maxPressure}}</p>
                 <p>Min: {{minPressure}}</p>
-                <p>Trend: {{pressureTrend}}</p>
+                    {{#if (eq pressureTrend 'rising')}}
+                    <p>Trend: <i class="fas fa-arrow-up"></i></p>
+                    {{else if (eq pressureTrend 'falling' )}}
+                    <p>Trend: <i class="fas fa-arrow-down"></i></p>
+                    {{else}}
+                    <i></i>
+                    {{/if}}
+                </p>
+
             </box>
         </div>
 

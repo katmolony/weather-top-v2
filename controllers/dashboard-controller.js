@@ -56,6 +56,7 @@ export const dashboardController = {
     const viewData = {
       title: "Station Dashboard",
       stations: sortedList,
+      user: loggedInUser,
     };
 
     let viewDataString = JSON.stringify(viewData); // Debug Remove Later

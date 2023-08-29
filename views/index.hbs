@@ -1,6 +1,49 @@
 {{> welcome-menu}}
+<style>
+  h2.index {
+    text-align: center;
+    font-weight: bold;
+    content: "";
+    display: inline-block;
+    width: 100%;
+  }
+  .box {
+    text-align: center;
+    font-weight: bold;
+  }
+</style>
+<div class="box">
+  <div class="parent">
+    <div class="div1">
+      <section class="img.fill">
+        <img src="../images/svg/homepage.png">
+      </section>
+    </div>
+    <div class="div2">
+      <div class="box">
+        <p>Weather Top allows you to</p>
+        <br>
+        <p>Monitor latest readings</p>
+        <p>Create your own stations</p>
+        <p>Add your own readings</p>
+        <p>Customise your dashboard</p>
+      </div>
+    </div>
+    <div class="div3">
+      <a href="/login">
+        <div class="box has-background-primary-light">
+          <h2 class="index has-text-grey">Already have an account?</h2>
+          <h2 class="index has-text-grey">Just click here</h2>
+        </div>
+      </a>
+      <br>
+      <a href="/signup">
+        <div class="box has-background-link-light">
+          <h2 class="index has-text-grey">Don't have an account?</h2>
+          <h2 class="index has-text-grey">Create an account here</h2>
 
-<section class="section">
-  <p> Sign up or Log in... </p>
-  <img src="../images/svg/homepage.png">
-</section>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

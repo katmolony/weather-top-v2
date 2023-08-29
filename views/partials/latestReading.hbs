@@ -14,21 +14,21 @@
         <div class="column is-one-fifth">
             <box class="box">
                 <i class="icon">{{#if (eq codeConversion 'Rain')}}
-                    <i class="fas fa-cloud-rain"></i>
+                    <i class="fas fa-cloud-rain" style="color: #3965b1;"></i>
                     {{else if (eq codeConversion 'Cloudy')}}
-                    <i class="fas fa-cloud"></i>
+                    <i class="fas fa-cloud" style="color: #656561;"></i>
                     {{else if (eq codeConversion "Partial clouds")}}
-                    <i class="fas fa-cloud-sun"></i>
+                    <i class="fas fa-cloud-sun" style="color: #3965b1;"></i>
                     {{else if (eq codeConversion 'Clear')}}
-                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-sun" style="color: #eedc1b;"></i>
                     {{else if (eq codeConversion 'Light Showers')}}
-                    <i class="fas fa-cloud-sun-rain"></i>
+                    <i class="fas fa-cloud-sun-rain" style="color: #5ec1d9;"></i>
                     {{else if (eq codeConversion 'Heavy Showers')}}
-                    <i class="fas fa-cloud-showers-heavy"></i>
+                    <i class="fas fa-cloud-showers-heavy" style="color: #3965b1;"></i>
                     {{else if (eq codeConversion 'Snow')}}
-                    <i class="fas fa-snowflake"></i>
+                    <i class="fas fa-snowflake" style="color: #656561;"></i>
                     {{else if (eq codeConversion 'Thunder')}}
-                    <i class="fas fa-cloud-bolt"></i>
+                    <i class="fas fa-cloud-bolt" style="color: #eedc1b;"></i>
                     {{else}}
                     <i></i>
                     {{/if}}</i>
@@ -39,16 +39,26 @@
 
         <div class="column is-one-fifth">
             <box class="box">
-                <i class="icon">{{>icons/temp}}</i>
+                <i class="icon">
+                    {{#if (gte latestReading.temperature 20)}}
+                            <i class="fas fa-temperature-high" style="color: #d93c20;"></i>
+                            {{else if (gte latestReading.temperature 10)}}
+                            <i class="fas fa-temperature-half" style="color: #ff811a;"></i>
+                            {{else if (lt latestReading.temperature 10)}}
+                            <i class="fas fa-temperature-low" style="color: #3f20d9;"></i>
+                            {{else}}
+                            <i></i>
+                            {{/if}}
+                            </i>
                 <label class="label">Temperature</label>
                 <p>{{latestReading.temperature}} °C</p>
                 <p>{{fahrenheit}} °F</p>
                 <p>Max: {{maxTemp}}</p>
                 <p>Min: {{minTemp}}</p>
                     {{#if (eq tempTrend 'rising')}}
-                    <p>Trend: <i class="fas fa-arrow-up"></i></p>
+                    <p>Trend: <i class="fas fa-arrow-up" style="color: #d93c20;"></i></p>
                     {{else if (eq tempTrend 'falling' )}}
-                    <p>Trend:<i class="fas fa-arrow-down"></i></p>
+                    <p>Trend:<i class="fas fa-arrow-down" style="color: #3f20d9;"></i></p>
                     {{else}}
                     <i></i>
                     {{/if}}
@@ -65,9 +75,9 @@
                 <p>Max: {{maxWind}}</p>
                 <p>Min: {{minWind}}</p>
                     {{#if (eq windTrend 'rising')}}
-                    <p>Trend: <i class="fas fa-arrow-up"></i></p>
+                    <p>Trend: <i class="fas fa-arrow-up" style="color: #d93c20;"></i></p>
                     {{else if (eq windTrend 'falling' )}}
-                    <p>Trend: <i class="fas fa-arrow-down"></i></p>
+                    <p>Trend: <i class="fas fa-arrow-down" style="color: #3f20d9;"></i></p>
                     {{else}}
                     <i></i>
                     {{/if}}
@@ -82,9 +92,9 @@
                 <p>Max: {{maxPressure}}</p>
                 <p>Min: {{minPressure}}</p>
                     {{#if (eq pressureTrend 'rising')}}
-                    <p>Trend: <i class="fas fa-arrow-up"></i></p>
+                    <p>Trend: <i class="fas fa-arrow-up" style="color: #d93c20;"></i></p>
                     {{else if (eq pressureTrend 'falling' )}}
-                    <p>Trend: <i class="fas fa-arrow-down"></i></p>
+                    <p>Trend: <i class="fas fa-arrow-down" style="color: #3f20d9;"></i></p>
                     {{else}}
                     <i></i>
                     {{/if}}

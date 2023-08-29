@@ -35,8 +35,13 @@ This Release 3 package includes:
 - Member: Users can edit their personal details
 - Features: Member's dashboard list summary lists latest conditions for all stations (alphabetically). Members can delete reports or stations
 
+This Release 4 package includes:
+
+- Readings: Auto Read from OpenWeatherMap API	
+- Station: Station Map View	
+- Member: None	
+- Features: Simple Graph of Trends
+
 This template is prepared in support of [Web Development II](https://next.tutors.dev/course/web-dev-2-2023) module in the [Higher Diploma in Computing](https://reader.tutors.dev/course/wit-hdip-comp-sci-showcase.netlify.app) at [SETU](https://www.setu.ie/), Ireland.
 
-
-This template is prepared in support of [Web Development II](https://next.tutors.dev/course/web-dev-2-2023) module in the [Higher Diploma in Computing](https://reader.tutors.dev/course/wit-hdip-comp-sci-showcase.netlify.app) at [SETU](https://www.setu.ie/), Ireland.
 

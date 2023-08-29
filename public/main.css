@@ -10,3 +10,11 @@
     .div1 { grid-area: 2 / 2 / 12 / 9; }
     .div2 { grid-area: 2 / 9 / 7 / 12; }
     .div3 { grid-area: 7 / 9 / 12 / 12; }
+
+h2.index {
+        text-align: center;
+        font-weight: bold;
+        content: "";
+        display: inline-block;
+        width: 100%;
+      }

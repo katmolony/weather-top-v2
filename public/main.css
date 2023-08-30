@@ -31,3 +31,8 @@ h2.index {
 #map {
   height: 400px;
 }
+
+/* for latestReading partial */
+.box {
+  height: 95%;
+}

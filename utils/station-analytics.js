@@ -1,10 +1,10 @@
 import { initStore } from "../utils/store-utils.js";
-import { weatherConditions } from "./weatherConditions.js";
 
 const db = initStore("readings");
 
 export const stationAnalytics = {
-  
+
+  //Getting latest reading for dashboard view
   async getLatestReadingAllStation(station) {
     await db.read();
 
@@ -13,11 +13,10 @@ export const stationAnalytics = {
     if (readingsForStation.length === 0) {
       return null;
     }
-    
-    return readingsForStation[readingsForStation.length-1];
-
+    return readingsForStation[readingsForStation.length - 1];
   },
 
+  //Getting latest reading for station view
   getLatestReading(station) {
     let latestReading = null;
     if (station.readings.length > 0) {
@@ -30,18 +29,6 @@ export const stationAnalytics = {
     return latestReading;
   },
 
-  // async getLatestCode(station) {
-  //   await db.read();
-
-  //   const readingsForStation = db.data.readings.filter((reading) => reading.stationid === station);
-
-  //   if (readingsForStation.length === 0) {
-  //     return null;
-  //   }
-    
-  //   return readingsForStation[readingsForStation.length-1];
-
-  // },
   getLatestCode(station) {
     let latestCode = null;
     if (station.readings.length > 0) {
@@ -155,19 +142,5 @@ export const stationAnalytics = {
     }
   },
 
-  // async weatherCondition (station) {
-  //   // weatherDescription(code) {
-  //   //     if (station.readings.length > 0) {
-  //   //     return weatherConditions.get(code).description;
-  //   //     }
-  //   //     else return "no readings";
-  //   // },
-
-  //   let weatherIcon(code) {
-  //       if (station.readings.length > 0) {
-  //       return weatherConditions.get(code).icon;
-  //       }
-  //       else return "no readings";
-  //   },
 }
 

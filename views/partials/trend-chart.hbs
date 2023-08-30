@@ -1,6 +1,6 @@
 <div class="block">
-<span id="showHide" class="button is-primary is-centered"> Hide Weather Trends
-</span>
+    <span id="showHide" class="button is-primary is-centered"> Hide Weather Trends
+    </span>
 </div>
 
 <div id="foo" style="display">
@@ -10,14 +10,14 @@
 </div>
 
 <script>
-document.getElementById("showHide").onclick = function() {
-    var theDiv = document.getElementById("foo");
-    if(theDiv.style.display == 'none') {
-        theDiv.style.display = 'block';
-        this.innerHTML = 'Hide Weather Trends';
-    } else {
-        theDiv.style.display = 'none';
-        this.innerHTML = 'Show Weather Trends';
+    document.getElementById("showHide").onclick = function () {
+        var theDiv = document.getElementById("foo");
+        if (theDiv.style.display == 'none') {
+            theDiv.style.display = 'block';
+            this.innerHTML = 'Hide Weather Trends';
+        } else {
+            theDiv.style.display = 'none';
+            this.innerHTML = 'Show Weather Trends';
+        }
     }
-}
 </script>

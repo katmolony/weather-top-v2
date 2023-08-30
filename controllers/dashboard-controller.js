@@ -1,7 +1,6 @@
 import { stationStore } from "../models/station-store.js";
 import { accountsController } from "./accounts-controller.js";
 import { stationAnalytics } from "../utils/station-analytics.js";
-import { readingStore } from "../models/reading-store.js";
 import { conversions } from "../utils/conversions.js";
 import { maxMin } from "../utils/maxMin.js";
 
@@ -58,10 +57,6 @@ export const dashboardController = {
       stations: sortedList,
       user: loggedInUser,
     };
-
-    let viewDataString = JSON.stringify(viewData); // Debug Remove Later
-    let viewDateObject = JSON.parse(viewDataString); // Debug Remove Later
-    console.dir(viewDateObject, { depth: null, colors: true }); // Debug Remove Later
 
     console.log("dashboard rendering");
     response.render("dashboard-view", viewData);

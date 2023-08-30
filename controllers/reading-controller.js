@@ -1,9 +1,8 @@
 import { stationStore } from "../models/station-store.js";
 import { readingStore } from "../models/reading-store.js";
-import { stationAnalytics } from "../utils/station-analytics.js";
 
 export const readingController = {
-    async index(request, response) {  
+    async index(request, response) {
         const stationId = request.params.stationid;
         const readingId = request.params.readingid;
         const date = new Date();
@@ -16,7 +15,7 @@ export const readingController = {
         };
         response.render("reading-view", viewData);
     },
-    
+
     async update(request, response) {
         const stationId = request.params.stationid;
         const readingId = request.params.readingid;

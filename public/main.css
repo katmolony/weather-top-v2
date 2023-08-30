@@ -1,20 +1,33 @@
 /* index page */
 .parent {
-    display: grid;
-    grid-template-columns: 0.5fr repeat(10, 1fr) 0.5fr;
-    grid-template-rows: 0.5fr repeat(10, 1fr) 0.5fr;
-    grid-column-gap: 30px;
-    grid-row-gap: 16px;
-    }
-    
-    .div1 { grid-area: 2 / 2 / 12 / 9; }
-    .div2 { grid-area: 2 / 9 / 7 / 12; }
-    .div3 { grid-area: 7 / 9 / 12 / 12; }
+  display: grid;
+  grid-template-columns: 0.5fr repeat(10, 1fr) 0.5fr;
+  grid-template-rows: 0.5fr repeat(10, 1fr) 0.5fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 16px;
+}
+
+.div1 {
+  grid-area: 2 / 2 / 12 / 9;
+}
+
+.div2 {
+  grid-area: 2 / 9 / 7 / 12;
+}
+
+.div3 {
+  grid-area: 7 / 9 / 12 / 12;
+}
 
 h2.index {
-        text-align: center;
-        font-weight: bold;
-        content: "";
-        display: inline-block;
-        width: 100%;
-      }
+  text-align: center;
+  font-weight: bold;
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+
+/* for map */
+#map {
+  height: 400px;
+}

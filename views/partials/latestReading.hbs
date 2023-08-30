@@ -41,27 +41,27 @@
             <box class="box">
                 <i class="icon">
                     {{#if (gte latestReading.temperature 20)}}
-                            <i class="fas fa-temperature-high" style="color: #d93c20;"></i>
-                            {{else if (gte latestReading.temperature 10)}}
-                            <i class="fas fa-temperature-half" style="color: #ff811a;"></i>
-                            {{else if (lt latestReading.temperature 10)}}
-                            <i class="fas fa-temperature-low" style="color: #3f20d9;"></i>
-                            {{else}}
-                            <i></i>
-                            {{/if}}
-                            </i>
+                    <i class="fas fa-temperature-high" style="color: #d93c20;"></i>
+                    {{else if (gte latestReading.temperature 10)}}
+                    <i class="fas fa-temperature-half" style="color: #ff811a;"></i>
+                    {{else if (lt latestReading.temperature 10)}}
+                    <i class="fas fa-temperature-low" style="color: #3f20d9;"></i>
+                    {{else}}
+                    <i></i>
+                    {{/if}}
+                </i>
                 <label class="label">Temperature</label>
                 <p>{{latestReading.temperature}} °C</p>
                 <p>{{fahrenheit}} °F</p>
                 <p>Max: {{maxTemp}}</p>
                 <p>Min: {{minTemp}}</p>
-                    {{#if (eq tempTrend 'rising')}}
-                    <p>Trend: <i class="fas fa-arrow-up" style="color: #d93c20;"></i></p>
-                    {{else if (eq tempTrend 'falling' )}}
-                    <p>Trend:<i class="fas fa-arrow-down" style="color: #3f20d9;"></i></p>
-                    {{else}}
-                    <i></i>
-                    {{/if}}
+                {{#if (eq tempTrend 'rising')}}
+                <p>Trend: <i class="fas fa-arrow-up" style="color: #d93c20;"></i></p>
+                {{else if (eq tempTrend 'falling' )}}
+                <p>Trend:<i class="fas fa-arrow-down" style="color: #3f20d9;"></i></p>
+                {{else}}
+                <i></i>
+                {{/if}}
             </box>
         </div>
 
@@ -74,13 +74,13 @@
                 <p>Feels like {{windChill}}</p>
                 <p>Max: {{maxWind}}</p>
                 <p>Min: {{minWind}}</p>
-                    {{#if (eq windTrend 'rising')}}
-                    <p>Trend: <i class="fas fa-arrow-up" style="color: #d93c20;"></i></p>
-                    {{else if (eq windTrend 'falling' )}}
-                    <p>Trend: <i class="fas fa-arrow-down" style="color: #3f20d9;"></i></p>
-                    {{else}}
-                    <i></i>
-                    {{/if}}
+                {{#if (eq windTrend 'rising')}}
+                <p>Trend: <i class="fas fa-arrow-up" style="color: #d93c20;"></i></p>
+                {{else if (eq windTrend 'falling' )}}
+                <p>Trend: <i class="fas fa-arrow-down" style="color: #3f20d9;"></i></p>
+                {{else}}
+                <i></i>
+                {{/if}}
             </box>
         </div>
 
@@ -91,17 +91,16 @@
                 <p>{{latestReading.pressure}} hpa</p>
                 <p>Max: {{maxPressure}}</p>
                 <p>Min: {{minPressure}}</p>
-                    {{#if (eq pressureTrend 'rising')}}
-                    <p>Trend: <i class="fas fa-arrow-up" style="color: #d93c20;"></i></p>
-                    {{else if (eq pressureTrend 'falling' )}}
-                    <p>Trend: <i class="fas fa-arrow-down" style="color: #3f20d9;"></i></p>
-                    {{else}}
-                    <i></i>
-                    {{/if}}
+                {{#if (eq pressureTrend 'rising')}}
+                <p>Trend: <i class="fas fa-arrow-up" style="color: #d93c20;"></i></p>
+                {{else if (eq pressureTrend 'falling' )}}
+                <p>Trend: <i class="fas fa-arrow-down" style="color: #3f20d9;"></i></p>
+                {{else}}
+                <i></i>
+                {{/if}}
                 </p>
-
             </box>
         </div>
-
+        
     </div>
 </div>

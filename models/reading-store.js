@@ -1,8 +1,6 @@
 import { v4 } from "uuid";
 import { initStore } from "../utils/store-utils.js";
 
-import { stationAnalytics } from "../utils/station-analytics.js";
-
 const db = initStore("readings");
 
 export const readingStore = {
@@ -41,9 +39,8 @@ export const readingStore = {
     db.data.readings = [];
     await db.write();
   },
-  
+
   async updateReading(reading, updatedReading) {
-    // const reading = await this.getReadingById(readingId);
     reading.code = updatedReading.code;
     reading.temperature = updatedReading.temperature;
     reading.windSpeed = updatedReading.windSpeed;
